@@ -1,0 +1,5 @@
+Para num=1 y num<=100 ir sumando 1
+si num es multiplo de 3 y de 5 escribe 'FizzBuzz'
+o si num es multiplo de 3 escribe 'Fizz'
+o si num es multiplo de 5 escribe 'Buzz'
+si no aplica en ninguna anterior entonces escribe num

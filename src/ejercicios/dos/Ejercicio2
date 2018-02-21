@@ -1,0 +1,7 @@
+En la línea 13 se inicializa un arreglo de enteros y en este momento es elegible por el Garbage Collector.
+En la línea 14 se crea un objeto de tipo integer y se inicializará con el valor resultante del método metodo1 que recibe un arreglo nulo.
+En la línea 5 se contruye el objeto con capacidad de 2 enteros.
+en la línea 6 se setea el primer espacio del arreglo con un 1.
+en la línea 7 se setea el segundo espacio del arreglo con un 2.
+y en la linea 9 se regresa el valor del primer espacio de arreglo.
+de la linea 16 al 19 hace la creación de un objeto entero j que le asigna un 3, sale del ciclo y en la linea 20 cambia el valor de i.
