@@ -1,5 +1,5 @@
-# Prueba Técnica - Programador (back-end)
-La siguiente es una prueba para evaluar a los postulantes a programador **Backend-end**.
+# Prueba Técnica - Programador (Back-end)
+La siguiente es una prueba para evaluar a los postulantes a programador **Back-end**.
 
 ## INTRODUCCIÓN
 Este repositorio contiene una serie de requerimientos de un Caso Práctico, que busca evaluar las capacidades técnicas del candidato con respecto a las principales funciones y responsabilidades que se requieren dentro del área de Desarrollo de Tecnología de _GCP Global_.
@@ -24,73 +24,7 @@ Principalmente los siguientes aspectos:
 
 ## EJERCICIOS
 
-### Ejercicio #1.
-Escribir un simple programa que imprima en pantalla los primeros 100 números. Si un número es múltiplo de 3, se escribe “Fizz” en su lugar. Si el número es múltiplo de 5, se escribe “Buzz”. Si el número es múltiplo de ambos se escribe “FizzBuzz”.
-* Escribe el algoritmo con base al problema planteado.
-* Selecciona un Lenguaje de Programación de entre aquellos que figuran en tu CV y escribe el código.
-
-###Ejercicio #2
-Se tiene la clase InstanceGarbage con el método main. Indicar claramente las instrucciones en que se produce la creación de objetos y también las instrucciones que causan que un objeto sea elegible por el Garbage Collector al ejecutar el método main. 
-```java
-1	public class InstanceGarbage {
-2		private static Integer metodo1(Integer[] a) {
-3			a = new Integer[2];
-4			a[0] = new Integer(1);
-5			a[1] = new Integer(2);
-6	
-7			return a[0];
-8		}
-9	
-10		public static void main(String[] args) {
-11			Integer[] a = null;
-12			Integer i = metodo1(a);
-13	
-14			do {
-15				Integer j = new Integer(3);
-16				i = j;
-17			} while (false);
-18			i = new Integer(4);
-19		}
-20	}
-```
-
-Para evitar confusión utilizar frases del tipo:
-* "En la instrucción... se crea el objeto..."
-* "Como consecuencia de la instrucción... el objeto... se convierte en basura"
-* "Tras la ejecución de la instrucción... el objeto... se convierte en basura"
-
-### Ejercicio #3.
-Implementa el método: 
-```java
-public static ArrayList<Punto> leeArchivoPuntos(String nomArchivo) throws FileNotFoundException
-```
-que realiza la lectura de un archivo de texto que contiene un conjunto de puntos (uno por línea) y regresa esos puntos en un ArrayList.
-El formato del archivo es el siguiente:
-```
-Punto         (3.45, -34.02 )
-Punto  ( -2.3 ,3.0)   
-Punto      (4.56,23.14   )
-```
-##### Consideraciones:
-* El número de espacios entre la palabra "Punto" y el paréntesis abierto es variable (puede haber uno o más).
-* Puede haber espacios entre el paréntesis abierto y el primer número, antes o después de la coma y antes del paréntesis cerrado.
-
-El archivo puede contener errores de formato. Cuando se encuentre una línea con un error de formato se introducirá en el ArrayList un punto en el que sus coordenadas (x, y) tengan el máximo valor que es posible almacenar en un double. Después de encontrar una línea errónea el método no debe finalizar, sino que deberá continuar procesando las restantes líneas del archivo.
-
-La clase `Punto` es:
-```java
-public class Punto {
-	double x;
-	double y;
-
-	public Punto(double x, double y) {
-		this.x = x;
-		this.y = y;
-	}
-}
-```
-
-### Ejercicio #4.
+### Ejercicio #
 Se desea administrar el acceso de vehículos a un estacionamiento de pago. El estacionamiento no se encuentra automatizado, por lo que existe un empleado encargado de registrar las entradas y salidas de vehículos.
 
 Los vehículos se identifican por su número de placa. Cuando un vehículo entra en el estacionamiento el empleado registra su entrada y al salir registra su salida y, en algunos casos, cobra el importe correspondiente por el tiempo de estacionamiento.
@@ -167,4 +101,3 @@ Para obtener intervalos de tiempos entre dos fechas suponer que se dispone del m
 */
 private static int difEnMinutos(Calendar inicial, Calendar final) {...}
 ```
-
