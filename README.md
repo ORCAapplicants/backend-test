@@ -2,7 +2,7 @@
 La siguiente es una prueba para evaluar a los postulantes a programador **Back-end**.
 
 ## INTRODUCCIÓN
-Este repositorio contiene una serie de requerimientos de un Caso Práctico, que busca evaluar las capacidades técnicas del candidato con respecto a las principales funciones y responsabilidades que se requieren dentro del área de Desarrollo de Tecnología de _GCP Global_.
+Este repositorio contiene una serie de requerimientos de un Caso Práctico, que busca evaluar las capacidades técnicas del candidato con respecto a las principales funciones y responsabilidades que se requieren dentro del área de Desarrollo de Tecnología de _Megabite_.
 
 #### ¿Qué se busca evaluar?
 Principalmente los siguientes aspectos:
@@ -14,13 +14,14 @@ Principalmente los siguientes aspectos:
 ## IMPORTANTE
 1. Recomendamos emplear un máximo de **3 (tres) horas** y enviar todo lo que puedas.
 2. Se requiere de una **cuenta de GitHub** para realizar este ejercicio.
-3. **Antes de comenzar a programar:**
-    * Realizar un `Fork` de este repositorio (https://github.com/ORCAapplicants/backend-test).
+3. Implementar alguno de los siguientes lenguajes Python, Java o Node + Typescript. Puede usar el framework de su preferencia.
+4. **Antes de comenzar a programar:**
+    * Realizar un `Fork` de este repositorio (https://github.com/Megabite-Food/backend-test).
     * Clonar el fork a su máquina local  `git clone git@github.com:USERNAME/FORKED-PROJECT.git`
     * Crear un `branch` en su cuenta de GitHub utilizando su nombre completo.
 6. **Al finalizar**, existen 2 (dos) opciones para entregar su proyecto:
-    * 1) Realizar un `Commit` de su proyecto, **enviar un `Pull Request` al branch con su NOMBRE**, y notificar a la siguiente dirección de correo electrónico  [developer@gcpglobal.com](mailto:developer@gcpglobal.com).
-    * 2) Crear un archivo comprimido (_.zip_ o _.rar_) de su proyecto y enviar a la siguiente dirección de correo electrónico  [developer@gcpglobal.com](mailto:developer@gcpglobal.com).
+    * 1) Realizar un `Commit` de su proyecto, **enviar un `Pull Request` al branch con su NOMBRE**, y notificar a la siguiente dirección de correo electrónico  [lespinoza@megabitefood.com](mailto:lespinoza@megabitefood.com).
+    * 2) Crear un archivo comprimido (_.zip_ o _.rar_) de su proyecto y enviar a la siguiente dirección de correo electrónico  [lespinoza@megabitefood.com](mailto:lespinoza@megabitefood.com).
 
 ## EJERCICIOS
 
@@ -32,12 +33,12 @@ Los vehículos se identifican por su número de placa. Cuando un vehículo entra
 El importe cobrado depende del tipo de vehículo:
 * Los vehículos oficiales no pagan, pero se registran sus estancias para llevar el control.
 (Una estancia consiste en una hora de entrada y una de salida)
-* Los residentes pagan a final de mes a razón de MXN$0.05  el minuto. La aplicación irá acumulando el tiempo (en minutos) que han permanecido estacionados.
-* Los no residentes pagan a la salida del estacionamiento a razón de MXN$0.5 por minuto.
+* Los residentes pagan a final de mes a razón de PEN S/0.05  el minuto. La aplicación irá acumulando el tiempo (en minutos) que han permanecido estacionados.
+* Los no residentes pagan a la salida del estacionamiento a razón de PEN S/0.5 por minuto.
 Se prevé que en el futuro puedan incluirse nuevos tipos de vehículos, por lo que la aplicación desarrollada deberá ser fácilmente extensible en ese aspecto.
 
 ##### Casos de uso
-![ Casos de uso](https://github.com/ORCAapplicants/backend-test/blob/master/img/backend-uc-01.png)
+![ Casos de uso](https://i.ibb.co/4JnJwyG/Screenshot-2021-06-12-at-20-11-11.png)
 
 A continuación se describen los casos de uso. No se entra en detalles de la interacción entre el empleado y la aplicación (punto 1 de cada caso de uso), puesto que no va a ser tarea de este ejercicio desarrollar esa parte.
 
@@ -77,7 +78,7 @@ S1234A 	    20134 				        1006.70
 La aplicación contará con un programa principal basado en un menú que permitirá al empleado interactuar con la aplicación (dicho programa principal no forma parte de este ejercicio).
 
 ##### Persistencia de datos
-La información de cada una de las estancias de los vehículos será almacenada en una base de datos. Debido a que el manejador de base de datos puede ser modificado en cualquier momento, se utilizará Hibernate como ORM.
+La información de cada una de las estancias de los vehículos será almacenada en una base de datos SQLite (file). Debido a que el manejador de base de datos puede ser modificado en cualquier momento, se utilizará un ORM.
 
 ##### Puntos que se deben desarrollar
 * Diagrama de clases y diagrama de secuencia  de las partes encargadas de la aplicación.
@@ -85,19 +86,3 @@ La información de cada una de las estancias de los vehículos será almacenada 
     * Código de las clases que permitan gestionar los vehículos con sus datos asociados (estancias, tiempo, etc.), las listas de vehículos registrados como oficiales y residentes, etc.
     * Mapeo de las clases para poder almacenar la información en la base de datos.
     * Clases para gestionar la persistencia de datos, incluida la configuración de conexión a la base de datos.
-
-##### Consideraciones.
-Para obtener la fecha y hora actual se utiliza la clase `Calendar`:
-``` java
-Calendar unaFecha; // para almacenar una fecha
-unaFecha = Calendar.getInstance(); // obtiene la fecha actual
-```
-Para obtener intervalos de tiempos entre dos fechas suponer que se dispone del método:
-```java
-/** Obtiene la diferencia en minutos entre dos fechas
-* @param inicial fecha inicial
-* @param final fecha final
-* @return diferencia final-inicial en minutos
-*/
-private static int difEnMinutos(Calendar inicial, Calendar final) {...}
-```
