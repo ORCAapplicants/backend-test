@@ -21,7 +21,7 @@ Principalmente los siguientes aspectos:
     * Crear un `branch` en su cuenta de GitHub utilizando su nombre completo.
 6. **Al finalizar**, existen 2 (dos) opciones para entregar su proyecto:
     * 1) Realizar un `Commit` de su proyecto, **enviar un `Pull Request` al branch con su NOMBRE**, y notificar a la siguiente dirección de correo electrónico  [lespinoza@megabitefood.com](mailto:lespinoza@megabitefood.com).
-    * 2) Crear un archivo comprimido (.zip o .rar) de su proyecto y enviar a la siguiente dirección de correo electrónico lespinoza@megabitefood.com con asunto: [nombre]_[apellido]-resultado test [cargo]
+    * 2) Crear un archivo comprimido (.zip o .rar) de su proyecto y enviar a la siguiente dirección de correo electrónico lespinoza@megabitefood.com con asunto: [nombre]_[apellido]- resultado prueba técnica [cargo]
 
 ## EJERCICIO
 
