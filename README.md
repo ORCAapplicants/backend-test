@@ -11,8 +11,8 @@ Principalmente los siguientes aspectos:
 * Eficiencia de los algoritmos entregados,
 * Familiaridad con Frameworks y plataformas de desarrollo.
 
-## IMPORTANTE
-1. Recomendamos emplear un máximo de **3 (tres) horas** y enviar todo lo que puedas.
+## ENTREGA
+1. Recomendamos emplear un máximo de **4 (cuatro) horas** y enviar todo lo que puedas.
 2. Se requiere de una **cuenta de GitHub** para realizar este ejercicio.
 3. Implementar alguno de los siguientes lenguajes Python, Java o Node + Typescript. Puede usar el framework de su preferencia.
 4. **Antes de comenzar a programar:**
@@ -21,11 +21,10 @@ Principalmente los siguientes aspectos:
     * Crear un `branch` en su cuenta de GitHub utilizando su nombre completo.
 6. **Al finalizar**, existen 2 (dos) opciones para entregar su proyecto:
     * 1) Realizar un `Commit` de su proyecto, **enviar un `Pull Request` al branch con su NOMBRE**, y notificar a la siguiente dirección de correo electrónico  [lespinoza@megabitefood.com](mailto:lespinoza@megabitefood.com).
-    * 2) Crear un archivo comprimido (_.zip_ o _.rar_) de su proyecto y enviar a la siguiente dirección de correo electrónico  [lespinoza@megabitefood.com](mailto:lespinoza@megabitefood.com).
+    * 2) Crear un archivo comprimido (.zip o .rar) de su proyecto y enviar a la siguiente dirección de correo electrónico lespinoza@megabitefood.com con asunto: [nombre]_[apellido]-resultado test [cargo]
 
-## EJERCICIOS
+## EJERCICIO
 
-### Ejercicio #
 Se desea administrar el acceso de vehículos a un estacionamiento de pago. El estacionamiento no se encuentra automatizado, por lo que existe un empleado encargado de registrar las entradas y salidas de vehículos.
 
 Los vehículos se identifican por su número de placa. Cuando un vehículo entra en el estacionamiento el empleado registra su entrada y al salir registra su salida y, en algunos casos, cobra el importe correspondiente por el tiempo de estacionamiento.
