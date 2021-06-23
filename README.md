@@ -71,8 +71,8 @@ A continuación se describen los casos de uso. No se entra en detalles de la int
 ```
 Núm. placa 	Tiempo estacionado (min.) 	Cantidad a pagar
 S1234A 	    20134 				        1006.70
-4567ABC	    4896				        244.80
-... 		..... 				        .....
+4567ABC	    4896				           244.80
+... 		..... 				           .....
 ```
 La aplicación contará con un programa principal basado en un menú que permitirá al empleado interactuar con la aplicación (dicho programa principal no forma parte de este ejercicio).
 
