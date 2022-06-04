@@ -26,6 +26,7 @@ autosDB.insetar_carro(carro4)
 
 # Seleccionamos uno en especifico por placa.
 print(autosDB.selecionar_carro('AAA111'))
+print(len(autosDB.selecionar_carro('AAA111')))
 
 # Se muestran todos los valores alojados en la tabla.
 autosDB.seleccionar_todos()
@@ -43,3 +44,8 @@ autosDB.actualizar_oficial("DDD444",1)
 
 # Se muestran todos los valores alojados en la tabla para verificar la actualizacion
 autosDB.seleccionar_todos()
+
+if(len(autosDB.selecionar_carro('AAA111')) == 0):
+    print("VAMO BIEN.")
+else:
+    print("PAILA.")

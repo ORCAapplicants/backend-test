@@ -6,7 +6,10 @@ David Santiago Rojo C. (dsrojo10@gmail.com)
 
 # librerias implementadas
 import datetime
-import time # para el tiempo actual
+import sqlite3
+import datetime
+from autos import Auto
+import autosDB
 
 # Funciones
 def calcularTiempo(placa):
@@ -14,6 +17,31 @@ def calcularTiempo(placa):
     t2 = cars_close[placa]
     t = (t2 - t1)
     return t
+
+"""" ------------ BASE DE DATOS ------------------- """
+# Se crea la tabla
+autosDB.crear_tabla_carros()
+print("La conexion con la base de datos fue exitosa!\n")
+
+# # Creamos 4 objetos de tipo Auto(placa, residente, oficial, tiempo).
+# carro1 = Auto('AAA111', '0', '0', 0)
+# carro2 = Auto('BBB222', '1', '0', 0)
+# carro3 = Auto('CCC333', '0', '1', 0)
+# carro4 = Auto('DDD444', '0', '0', 0)
+
+# # Se insertan los carros a la tabla.
+# autosDB.insetar_carro(carro1)
+# autosDB.insetar_carro(carro2)
+# autosDB.insetar_carro(carro3)
+# autosDB.insetar_carro(carro4)
+
+# # Seleccionamos uno en especifico por placa.
+# print(autosDB.selecionar_carro('AAA111'))
+
+# # Se muestran todos los valores alojados en la tabla.
+# autosDB.seleccionar_todos()
+
+""" ----------------------------------------------  """
 
 # Diccionarios para almacenar los datos
 cars_time = {} # Diccionario para el tiempo total de estancia de cada auto
@@ -47,6 +75,8 @@ while True:
         placa=placa.upper() # Se convierte a MAYUS para mantener coherencia entre datos
         cars_init[placa] = datetime.datetime.now() # Se almacena los datos de entrada del parqueadero
         # cars_time[placa] = (datetime.datetime.now() - datetime.datetime.now()) # Se inicializa el tiempo en 0:00:00
+        if(len(autosDB.selecionar_carro(placa)) == 0):
+            autosDB.insetar_carro(Auto(placa, '0', '0', 0)) # En caso de que el carro nunca haya sido parqueado, se agrega a la BD
         print(cars_init) # Se muestra el diccionario con horas de entrada
         print("HORA DE ENTRADA:\n",cars_init) # Se muestra el diccionario con horas de ingreso
 
@@ -58,18 +88,32 @@ while True:
         cars_close[placa] = datetime.datetime.now() # Se almacena los datos de salida del parqueadero
         print(cars_close) # Se muestra el diccionario con horas de salida
         # registrarTiempo(placa, cars_close)
+        
+        # if(placa in carsOF):
+            # cars_time[placa] = calcularTiempo(str(placa))
+        # if(placa in carsRSD):
+        #     cars_time[placa] = calcularTiempo(str(placa))
+        # else:
+        #     deuda = calcularTiempo(placa)
+        #     print("---------------------------------------")
+        #     print("El tiempo que estuvo fue:")
+        #     print(deuda) 
+        #     print("---------------------------------------")
         if(placa in carsOF):
-            cars_time[placa] = calcularTiempo(str(placa))
+            print("OFICIAAAAAAAAAAL.")
+            cars_time[placa] = calcularTiempo(str(placa)) # se almacena el tiempo que estuvo
         if(placa in carsRSD):
-            cars_time[placa] = calcularTiempo(str(placa))
-        else:
+            cars_time[placa] = calcularTiempo(str(placa)) # se almacena el tiempo que estuvo
+            print("RESIDENTESSSSSS.")
+        if(placa not in carsOF and placa not in carsRSD):
             deuda = calcularTiempo(placa)
             print("---------------------------------------")
             print("El tiempo que estuvo fue:")
             print(deuda) 
             print("---------------------------------------")
-        # # print("\nEl auto ", placa, "debe pagar:", deuda*0.05, "MXN\n" )
-        # # print("El auto ",placa," debe: ", deuda*0.05," MXN")
+            print("XXXXXXXXXXXXXXXXX")
+
+
 
         
     # DAR DE ALTA VEHICULO OFICIAL
@@ -78,6 +122,7 @@ while True:
         placa=input() # Se recibe el dato por consola
         placa=placa.upper() # Se convierte a MAYUS para mantener coherencia entre datos
         carsOF.append(placa)
+        autosDB.actualizar_oficial(placa, '1') # se actualiza el estatus en la base de datos a carro oficial
         print(carsOF)
     
     # DAR DE ALTA VEHICULO OFICIAL
@@ -86,6 +131,7 @@ while True:
         placa=input() # Se recibe el dato por consola
         placa=placa.upper() # Se convierte a MAYUS para mantener coherencia entre datos
         carsRSD.append(placa)
+        autosDB.actualizar_residente(placa, '1') # se actualiza el estatus en la base de datos a carro residente
         print(carsRSD)
     
     # COMIENZA MES
@@ -94,6 +140,7 @@ while True:
         cars_time.clear()
         cars_init.clear()
         cars_close.clear()
+        autosDB.eliminar_tabla()
 
     # PAGOS RESIDENTES
     if(aux == '6' or aux == 6):
@@ -109,6 +156,7 @@ while True:
         print(cars_init)
         print("Times close:")
         print(cars_close)
+        autosDB.seleccionar_todos()
 
     # CALCULAR TIEMPO DENTR DEL PARQUEADERO
     if(aux == '9' or aux == 9):
