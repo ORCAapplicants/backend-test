@@ -46,6 +46,7 @@ while True:
         placa=input() # Se recibe el dato por consola
         placa=placa.upper() # Se convierte a MAYUS para mantener coherencia entre datos
         cars_init[placa] = datetime.datetime.now() # Se almacena los datos de entrada del parqueadero
+        # cars_time[placa] = (datetime.datetime.now() - datetime.datetime.now()) # Se inicializa el tiempo en 0:00:00
         print(cars_init) # Se muestra el diccionario con horas de entrada
         print("HORA DE ENTRADA:\n",cars_init) # Se muestra el diccionario con horas de ingreso
 
