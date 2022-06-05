@@ -5,7 +5,6 @@ David Santiago Rojo C. (dsrojo10@gmail.com)
 '''
 
 # librerias implementadas
-# import os
 import datetime
 import sqlite3
 import datetime
@@ -33,25 +32,6 @@ autosDB.crear_tabla_carros()
 conn = sqlite3.connect('parqueadero.db')
 c = conn.cursor()
 print("La conexion con la base de datos fue exitosa!\n")
-
-# # Creamos 4 objetos de tipo Auto(placa, residente, oficial, tiempo).
-# carro1 = Auto('AAA111', '0', '0', 0)
-# carro2 = Auto('BBB222', '1', '0', 0)
-# carro3 = Auto('CCC333', '0', '1', 0)
-# carro4 = Auto('DDD444', '0', '0', 0)
-
-# # Se insertan los carros a la tabla.
-# autosDB.insetar_carro(carro1)
-# autosDB.insetar_carro(carro2)
-# autosDB.insetar_carro(carro3)
-# autosDB.insetar_carro(carro4)
-
-# # Seleccionamos uno en especifico por placa.
-# print(autosDB.selecionar_carro('AAA111'))
-
-# # Se muestran todos los valores alojados en la tabla.
-# autosDB.seleccionar_todos()
-
 """ ----------------------------------------------  """
 
 # Diccionarios para almacenar los datos
@@ -94,7 +74,6 @@ while True:
         placa=input() # Se recibe el dato por consola
         placa=placa.upper() # Se convierte a MAYUS para mantener coherencia entre datos
         cars_init[placa] = datetime.datetime.now() # Se almacena los datos de entrada del parqueadero
-        # cars_time[placa] = (datetime.datetime.now() - datetime.datetime.now()) # Se inicializa el tiempo en 0:00:00
         if(len(autosDB.selecionar_carro(placa)) == 0):
             autosDB.insetar_carro(Auto(placa, '0', '0', 0)) # En caso de que el carro nunca haya sido parqueado, se agrega a la BD
         print(cars_init) # Se muestra el diccionario con horas de entrada
@@ -120,13 +99,9 @@ while True:
             print("RESIDENTESSSSSS.")
         if(placa not in carsOF and placa not in carsRSD):
             minutos = calcularMinutos(placa)
-            # minutos = deuda.total_seconds / 60
-            # minutos = round(minutos, 2)
             print("---------------------------------------")
-            print("El tiempo que estuvo fue:")
-            print(minutos) 
-            print("El pago es:")
-            print(minutos*0.5," MXN") 
+            print("El tiempo que estuvo fue:     El pago es:")
+            print(minutos,"                     ",minutos*0.5," MXN") 
             print("---------------------------------------")
             print("XXXXXXXXXXXXXXXXX")
         
@@ -179,20 +154,9 @@ while True:
         print(carros)
 
         file = open(nomArchivo, "w")
-        # file.write("PLACA:          TIEMPO(min):        DEUDA" + os.linesep)
         file.write("PLACA:      TIEMPO(min):      DEUDA:\n")
-        # print("PLACA:          TIEMPO(min):        DEUDA")
-        # for i in carsRSD:
-        #     if(i in cars_time):
-        #         contenido = i+ "       " + str(cars_time[i]) + "        " + str(cars_time[i]*0.05) + " MXN."
-        #         print(i, "       ",cars_time[i], "        ", str(cars_time[i]*0.05), " MXN.")
-        #         file.write(contenido + os.linesep)
-        # file.close()
-
         for i in carros:
                 contenido = i[0]+ "            " + str(i[3]) + "        " + str(i[3]*0.05) + " MXN.\n"
-                # print(i, "       ",cars_time[i], "        ", str(cars_time[i]*0.05), " MXN.")
-                # file.write(contenido + os.linesep)
                 file.write(contenido)
         file.close()
         

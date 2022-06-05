@@ -61,5 +61,6 @@ def seleccionar_todos(): # Se muestra el contenido total de la tabla, se usan lo
     conn = sqlite3.connect('parqueadero.db')
     c = conn.cursor()
     c.execute("SELECT * FROM tiempos_mes")
-    print(c.fetchall())
+    carros = c.fetchall()
     conn.close()
+    return carros
