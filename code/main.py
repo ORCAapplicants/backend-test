@@ -64,7 +64,6 @@ while True:
     print("6. Pagos residentes")
     print("7. SALIR (CERRAR SISTEMA)")
     print("8. Listar diccionarios: (prueba)")
-    print("9. Restar tiempo")
     print("Seleccione una opcion:")
     aux = input()
 
@@ -172,13 +171,6 @@ while True:
         print("Times close:")
         print(cars_close)
         print(autosDB.seleccionar_todos())
-
-    # CALCULAR TIEMPO DENTRO DEL PARQUEADERO
-    if(aux == '9' or aux == 9):
-        print("Ingrese la placa del auto")
-        placa = input()
-        placa = placa.upper() # Se convierte a MAYUS para mantener coherencia entre datos
-        print(calcularTiempo(placa))
 
 
 

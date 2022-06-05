@@ -68,7 +68,7 @@ def seleccionar_todos(): # Se muestra el contenido total de la tabla, se usan lo
     conn.close()
     return carros
 
-def seleccionar_por_estatus(estatus): # Se muestra el contenido total de la tabla, se usan los metodos SELECT y FROM
+def seleccionar_por_estatus(estatus): # Se muestra el contenido total de la tabla, se usan los metodos SELECT, FROM y WHERE
     conn = sqlite3.connect('parqueadero.db')
     c = conn.cursor()
     if(estatus=="oficial"):
